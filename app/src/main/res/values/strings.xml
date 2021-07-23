@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pharmacy_app</string>
+    <string name="menu">Главное меню</string>
+    <string name="preparation_database">База данных препоратов</string>
+    <string name="preparation_added">Добавить препарат</string>
+    <string name="customer_database">База даных клиентов</string>
+    <string name="added_customer">Добавить клиента</string>
+</resources>
