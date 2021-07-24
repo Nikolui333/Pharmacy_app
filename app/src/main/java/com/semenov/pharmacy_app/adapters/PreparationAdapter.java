@@ -1,4 +1,4 @@
-package com.semenov.pharmacy_app;
+package com.semenov.pharmacy_app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.semenov.pharmacy_app.preparationActivity.DescriptionPreparationActivity;
+import com.semenov.pharmacy_app.R;
+import com.semenov.pharmacy_app.TextPreparation;
 
 import java.util.List;
 
@@ -51,8 +55,7 @@ public class PreparationAdapter extends RecyclerView.Adapter<PreparationAdapter.
 
     @Override
     public void onBindViewHolder(PreparationViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
+
         holder.textView.setText(mDataset.get(position).name);
 
         holder.textView.setOnClickListener(new View.OnClickListener() {

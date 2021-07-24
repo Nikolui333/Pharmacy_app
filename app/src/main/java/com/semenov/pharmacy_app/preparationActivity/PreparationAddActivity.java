@@ -1,4 +1,4 @@
-package com.semenov.pharmacy_app;
+package com.semenov.pharmacy_app.preparationActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.semenov.pharmacy_app.R;
+import com.semenov.pharmacy_app.database.PreparationDBHelper;
 
 public class PreparationAddActivity extends AppCompatActivity implements View.OnClickListener{
 

@@ -1,4 +1,4 @@
-package com.semenov.pharmacy_app;
+package com.semenov.pharmacy_app.preparationActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
+import com.semenov.pharmacy_app.R;
+
 public class DescriptionPreparationActivity extends AppCompatActivity {
 
     TextView textView;
     TextView textView2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

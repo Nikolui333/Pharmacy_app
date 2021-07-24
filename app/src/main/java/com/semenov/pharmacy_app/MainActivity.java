@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.semenov.pharmacy_app.clientsActivity.ClientAddActivity;
+import com.semenov.pharmacy_app.clientsActivity.ClientsListActivity;
+import com.semenov.pharmacy_app.preparationActivity.PreparationAddActivity;
+import com.semenov.pharmacy_app.preparationActivity.PreparationListActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,5 +29,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void buttonClientsList(View view) {
+        Intent intent = new Intent(this, ClientsListActivity.class);
+        startActivity(intent);
+    }
 
+    public void buttonClientAdd(View view) {
+        Intent intent = new Intent(this, ClientAddActivity.class);
+        startActivity(intent);
+    }
 }

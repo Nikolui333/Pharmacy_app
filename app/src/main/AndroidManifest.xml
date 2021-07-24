@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pharmacy_app">
-        <activity android:name=".DescriptionPreparationActivity"></activity>
-        <activity android:name=".PreparationAddActivity" />
-        <activity android:name=".PreparationListActivity" />
+        <activity android:name=".clientsActivity.ClientAddActivity"></activity>
+        <activity android:name=".clientsActivity.ContactsClientActivity" />
+        <activity android:name=".clientsActivity.ClientsListActivity" />
+        <activity android:name=".preparationActivity.DescriptionPreparationActivity" />
+        <activity android:name=".preparationActivity.PreparationAddActivity" />
+        <activity android:name=".preparationActivity.PreparationListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

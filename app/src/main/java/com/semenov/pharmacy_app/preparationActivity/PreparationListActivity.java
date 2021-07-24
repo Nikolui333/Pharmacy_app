@@ -1,4 +1,4 @@
-package com.semenov.pharmacy_app;
+package com.semenov.pharmacy_app.preparationActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,12 +8,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.semenov.pharmacy_app.R;
+import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.adapters.PreparationAdapter;
+import com.semenov.pharmacy_app.database.PreparationDBHelper;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PreparationListActivity extends AppCompatActivity implements Serializable {
-
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".preparationActivity.PreparationAddActivity">
+    tools:context=".clientsActivity.ClientAddActivity">
 
     <Button
-        android:id="@+id/buttonSavePreparation"
+        android:id="@+id/buttonSaveClients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/savePreparation"
@@ -20,7 +20,7 @@
         android:paddingBottom="20dp"/>
 
     <EditText
-        android:id="@+id/editTextPreparation2"
+        android:id="@+id/editName"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,14 +31,24 @@
         android:layout_marginRight="20dp"/>
 
     <EditText
-        android:id="@+id/editTextPreparation1"
+        android:id="@+id/editPhoneNumber"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/preparation_description"
         android:inputType="textMultiLine"
         android:gravity="top"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
 
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/preparation_description"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 </LinearLayout>
