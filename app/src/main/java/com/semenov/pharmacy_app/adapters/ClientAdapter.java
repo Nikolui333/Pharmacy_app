@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.semenov.pharmacy_app.R;
 import com.semenov.pharmacy_app.TextClients;
+import com.semenov.pharmacy_app.clientsActivity.ContactsClientActivity;
 import com.semenov.pharmacy_app.preparationActivity.DescriptionPreparationActivity;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(parent, DescriptionPreparationActivity.class);
+                Intent intent = new Intent(parent, ContactsClientActivity.class);
                 intent.putExtra("name", mDataset.get(position).name);
                 intent.putExtra("phone", mDataset.get(position).phone_number);
                 intent.putExtra("email", mDataset.get(position).email);
