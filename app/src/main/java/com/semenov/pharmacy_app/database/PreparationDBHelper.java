@@ -32,8 +32,8 @@ public class PreparationDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public SQLiteDatabase open()throws SQLException {
+/*    public SQLiteDatabase open()throws SQLException {
 
         return SQLiteDatabase.openDatabase(DATABASE_NAME, null, SQLiteDatabase.OPEN_READWRITE);
-    }
+    }*/
 }

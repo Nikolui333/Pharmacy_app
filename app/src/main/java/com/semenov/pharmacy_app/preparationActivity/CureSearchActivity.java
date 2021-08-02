@@ -44,12 +44,12 @@ public class CureSearchActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         try {
-            db = sqlHelper.open();
-          //  db = sqlHelper.getReadableDatabase();//чтение базы данных
+           // db = sqlHelper.open();
+            db = sqlHelper.getReadableDatabase();//чтение базы данных
             userCursor = db.rawQuery("select * from " + PreparationDBHelper.TABLE_TEXT, null);
-            String[] headers = new String[]{PreparationDBHelper.KEY_NAME, PreparationDBHelper.KEY_TEXT};
+            String[] headers = new String[]{PreparationDBHelper.KEY_NAME/*, PreparationDBHelper.KEY_TEXT*/};
             userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                    userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
+                    userCursor, headers, new int[]{android.R.id.text1/*, android.R.id.text2*/}, 0);
 
             // если в текстовом поле есть текст, выполняем фильтрацию
             // данная проверка нужна при переходе от одной ориентации экрана к другой
