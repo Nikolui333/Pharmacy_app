@@ -72,6 +72,4 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
     public int getItemCount() {
         return mDataset.size();
     }
-
-
 }

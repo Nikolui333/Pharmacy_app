@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pharmacy_app</string>
+    <string name="app_name"></string>
     <string name="menu">Главное меню</string>
     <string name="preparation_database">База данных препаратов</string>
     <string name="preparation_added">Добавить препарат</string>
@@ -8,4 +8,7 @@
     <string name="preparation_name">Введите название препарата</string>
     <string name="preparation_description">Введите описание препарата</string>
     <string name="savePreparation">Сохранить</string>
+    <string name="name_client">Введите Ф.И.О.</string>
+    <string name="phoneNumber">Введите номер телефона</string>
+    <string name="email">введите email</string>
 </resources>

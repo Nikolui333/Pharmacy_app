@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pharmacy_app">
-        <activity android:name=".clientsActivity.ClientAddActivity"></activity>
+        <activity
+            android:name=".preparationActivity.CureSearchActivity"
+            android:exported="true" />
+        <activity android:name=".clientsActivity.ClientAddActivity" />
         <activity android:name=".clientsActivity.ContactsClientActivity" />
         <activity android:name=".clientsActivity.ClientsListActivity" />
         <activity android:name=".preparationActivity.DescriptionPreparationActivity" />

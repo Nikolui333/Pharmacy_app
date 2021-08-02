@@ -3,6 +3,7 @@ package com.semenov.pharmacy_app.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.SQLException;
 
 public class PreparationDBHelper extends SQLiteOpenHelper {
 
@@ -29,5 +30,10 @@ public class PreparationDBHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists " + TABLE_TEXT);
 
         onCreate(db);
+    }
+
+    public SQLiteDatabase open()throws SQLException {
+
+        return SQLiteDatabase.openDatabase(DATABASE_NAME, null, SQLiteDatabase.OPEN_READWRITE);
     }
 }

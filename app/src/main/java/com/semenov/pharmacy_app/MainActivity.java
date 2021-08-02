@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.semenov.pharmacy_app.clientsActivity.ClientAddActivity;
 import com.semenov.pharmacy_app.clientsActivity.ClientsListActivity;
+import com.semenov.pharmacy_app.preparationActivity.CureSearchActivity;
 import com.semenov.pharmacy_app.preparationActivity.PreparationAddActivity;
 import com.semenov.pharmacy_app.preparationActivity.PreparationListActivity;
 
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonClientAdd(View view) {
         Intent intent = new Intent(this, ClientAddActivity.class);
+        startActivity(intent);
+    }
+
+    public void buttonCureSearch(View view) {
+        Intent intent = new Intent(this, CureSearchActivity.class);
         startActivity(intent);
     }
 }

@@ -60,5 +60,4 @@ public class ClientAddActivity extends AppCompatActivity implements View.OnClick
         }
         clientDBHelper.close();
     }
-
 }
