@@ -39,9 +39,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ClientAddActivity.class);
         startActivity(intent);
     }
-
-    public void buttonCureSearch(View view) {
-        Intent intent = new Intent(this, CureSearchActivity.class);
-        startActivity(intent);
-    }
+    
 }

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:text="TextView" />
 
     <TextView
@@ -17,6 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="25sp"
         android:text="TextView" />
 </LinearLayout>

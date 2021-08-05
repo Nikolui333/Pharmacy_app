@@ -76,17 +76,4 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp"/>
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/added_customer"
-        android:onClick="buttonCureSearch"
-        android:layout_gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"/>
 </LinearLayout>
