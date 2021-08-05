@@ -10,23 +10,23 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.semenov.pharmacy_app.preparationActivity.DescriptionPreparationActivity;
 import com.semenov.pharmacy_app.R;
 import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.preparationActivity.DescriptionPreparationActivity;
 
 import java.util.List;
 
-public class PreparationAdapter extends RecyclerView.Adapter<PreparationAdapter.PreparationViewHolder> {
+public class CureSearchAdapter extends RecyclerView.Adapter<CureSearchAdapter.CureSearchViewHolder> {
 
     private List<TextPreparation> mDataset;
 
     public Context parent;
 
-    class PreparationViewHolder extends RecyclerView.ViewHolder {
+    class CureSearchViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textView;
 
-        public PreparationViewHolder(TextView v) {
+        public CureSearchViewHolder(TextView v) {
             super(v);
 
             textView = v;
@@ -34,7 +34,7 @@ public class PreparationAdapter extends RecyclerView.Adapter<PreparationAdapter.
 
     }
 
-    public PreparationAdapter(List<TextPreparation> myDataset, Context parent) {
+    public CureSearchAdapter(List<TextPreparation> myDataset, Context parent) {
         mDataset = myDataset;
 
         this.parent = parent;
@@ -43,19 +43,19 @@ public class PreparationAdapter extends RecyclerView.Adapter<PreparationAdapter.
 
     // Create new views (invoked by the layout manager)
     @Override
-    public PreparationAdapter.PreparationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public  CureSearchAdapter.CureSearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         // create a new view
         Context context = parent.getContext();
         TextView v = (TextView) LayoutInflater.from(context)
                 .inflate(R.layout.item_preparation, parent, false);
 
-        PreparationViewHolder vh = new PreparationViewHolder(v);
+        CureSearchAdapter.CureSearchViewHolder vh = new CureSearchAdapter.CureSearchViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(PreparationViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(CureSearchAdapter.CureSearchViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.textView.setText(mDataset.get(position).name);
 

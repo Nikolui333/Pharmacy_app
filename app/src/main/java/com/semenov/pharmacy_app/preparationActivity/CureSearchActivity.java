@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.semenov.pharmacy_app.R;
 import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.adapters.CureSearchAdapter;
 import com.semenov.pharmacy_app.adapters.PreparationAdapter;
 import com.semenov.pharmacy_app.database.PreparationDBHelper;
 
@@ -63,9 +64,10 @@ public class CureSearchActivity extends AppCompatActivity implements View.OnClic
         ArrayList<TextPreparation> textPreparations = new ArrayList<>();
         textPreparations.add(preparationDBHelper.getContact(name));
 
-        PreparationAdapter preparationAdapter = new PreparationAdapter(textPreparations, this);
+        CureSearchAdapter cureSearchAdapter = new CureSearchAdapter(textPreparations, this);
+       // PreparationAdapter preparationAdapter = new PreparationAdapter(textPreparations, this);
       //  MainAdapter mainAdapter = new MainAdapter(contacts);
-        recyclerView.setAdapter(preparationAdapter);
+        recyclerView.setAdapter(cureSearchAdapter);
         Log.d("mLog","onClick_2");
         break;
     }
