@@ -9,6 +9,7 @@ import android.database.SQLException;
 import android.util.Log;
 
 import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.TextSearch;
 
 public class PreparationDBHelper extends SQLiteOpenHelper {
 
@@ -55,7 +56,7 @@ public class PreparationDBHelper extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    public TextPreparation getContact(String name) {
+    public TextSearch getContact(String name) {
         try {
             SQLiteDatabase db = this.getReadableDatabase();
 
@@ -78,9 +79,9 @@ public class PreparationDBHelper extends SQLiteOpenHelper {
 
         return contact;*/
 
-            TextPreparation contact = null;
+            TextSearch contact = null;
             if (cursor.moveToFirst()) {
-                contact = new TextPreparation(Integer.parseInt(cursor.getString(0)),
+                contact = new TextSearch(Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1), cursor.getString(2));
             }
             cursor.close();

@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.semenov.pharmacy_app.R;
 import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.TextSearch;
 import com.semenov.pharmacy_app.adapters.CureSearchAdapter;
 import com.semenov.pharmacy_app.adapters.PreparationAdapter;
 import com.semenov.pharmacy_app.database.PreparationDBHelper;
@@ -61,10 +62,13 @@ public class CureSearchActivity extends AppCompatActivity implements View.OnClic
         switch (view.getId()){
 
         case R.id.buttonSearch:
-        ArrayList<TextPreparation> textPreparations = new ArrayList<>();
-        textPreparations.add(preparationDBHelper.getContact(name));
+            ArrayList<TextSearch> textSearches = new ArrayList<>();
+            textSearches.add(preparationDBHelper.getContact(name));
 
-        CureSearchAdapter cureSearchAdapter = new CureSearchAdapter(textPreparations, this);
+/*        ArrayList<TextPreparation> textPreparations = new ArrayList<>();
+        textPreparations.add(preparationDBHelper.getContact(name));*/
+
+        CureSearchAdapter cureSearchAdapter = new CureSearchAdapter(textSearches);
        // PreparationAdapter preparationAdapter = new PreparationAdapter(textPreparations, this);
       //  MainAdapter mainAdapter = new MainAdapter(contacts);
         recyclerView.setAdapter(cureSearchAdapter);
