@@ -1,10 +1,14 @@
 package com.semenov.pharmacy_app.preparationActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 import com.semenov.pharmacy_app.R;
+import com.semenov.pharmacy_app.TextPreparation;
+import com.semenov.pharmacy_app.adapters.PreparationAdapter;
 import com.semenov.pharmacy_app.database.PreparationDBHelper;
 
 import android.database.Cursor;
@@ -13,87 +17,58 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-public class CureSearchActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    PreparationDBHelper sqlHelper;
-    SQLiteDatabase db;
-    Cursor userCursor;
-    SimpleCursorAdapter userAdapter;
-    ListView userList;
+public class CureSearchActivity extends AppCompatActivity implements View.OnClickListener {
+
     EditText userFilter;
+    Button buttonSearch;
+    RecyclerView recyclerView;
+    PreparationDBHelper preparationDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cure_search);
 
-        userList = (ListView)findViewById(R.id.userList);
         userFilter = (EditText)findViewById(R.id.userFilter);
 
-        sqlHelper = new PreparationDBHelper(getApplicationContext());
-        // создаем базу данных
-       // sqlHelper.create_db();
+        buttonSearch = (Button) findViewById(R.id.buttonSearch);
+        buttonSearch.setOnClickListener(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.rvCureSearch);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        preparationDBHelper = new PreparationDBHelper(this);
+
     }
 
+
     @Override
-    public void onResume() {
-        super.onResume();
-        try {
-            db = sqlHelper.open();
-           // db = sqlHelper.getReadableDatabase();//чтение базы данных
-            userCursor = db.rawQuery("select * from " + PreparationDBHelper.TABLE_TEXT, null);
-            String[] headers = new String[]{PreparationDBHelper.KEY_NAME/*, PreparationDBHelper.KEY_TEXT*/};
-            userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                    userCursor, headers, new int[]{android.R.id.text1/*, android.R.id.text2*/}, 0);
+    public void onClick(View view) {
 
-            // если в текстовом поле есть текст, выполняем фильтрацию
-            // данная проверка нужна при переходе от одной ориентации экрана к другой
-            if(!userFilter.getText().toString().isEmpty())
-                userAdapter.getFilter().filter(userFilter.getText().toString());
+        String name = userFilter.getText().toString();
 
-            // установка слушателя изменения текста
-            userFilter.addTextChangedListener(new TextWatcher() {
+        switch (view.getId()){
 
-                public void afterTextChanged(Editable s) { }
+        case R.id.buttonSearch:
+        ArrayList<TextPreparation> textPreparations = new ArrayList<>();
+        textPreparations.add(preparationDBHelper.getContact(name));
 
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-                // при изменении текста выполняем фильтрацию
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    userAdapter.getFilter().filter(s.toString());
-                }
-            });
-
-            // устанавливаем провайдер фильтрации
-            userAdapter.setFilterQueryProvider(new FilterQueryProvider() {
-                @Override
-                public Cursor runQuery(CharSequence constraint) {
-
-                    if (constraint == null || constraint.length() == 0) {
-
-                        return db.rawQuery("select * from " + PreparationDBHelper.TABLE_TEXT, null);
-                    }
-                    else {
-                        return db.rawQuery("select * from " + PreparationDBHelper.TABLE_TEXT + " where " +
-                                PreparationDBHelper.DATABASE_NAME + " like ?", new String[]{"%" + constraint.toString() + "%"});
-                    }
-                }
-            });
-
-            userList.setAdapter(userAdapter);
-        }
-        catch (SQLException ex){}
+        PreparationAdapter preparationAdapter = new PreparationAdapter(textPreparations, this);
+      //  MainAdapter mainAdapter = new MainAdapter(contacts);
+        recyclerView.setAdapter(preparationAdapter);
+        Log.d("mLog","onClick_2");
+        break;
     }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        // Закрываем подключение и курсор
-        db.close();
-        userCursor.close();
+
     }
 }

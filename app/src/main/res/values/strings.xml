@@ -12,4 +12,5 @@
     <string name="phoneNumber">Введите номер телефона</string>
     <string name="email">введите email</string>
     <string name="searchPreparation">Поиск препарата</string>
+    <string name="searchPreparation2">Найти препарат</string>
 </resources>
