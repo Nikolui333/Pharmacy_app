@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     >
 
+    <Button
+        android:id="@+id/buttonSearchPreparation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="@string/searchPreparation" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPreparation"
         android:scrollbars="vertical"
